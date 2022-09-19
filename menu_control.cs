@@ -88,7 +88,7 @@ namespace game_pad_UI
             down_B = context.action.triggered;
         }
 
-        public void left(CallbackContext context) 
+        public void left(CallbackContext context)
         {
             left_B = context.action.triggered;
         }
@@ -121,16 +121,12 @@ namespace game_pad_UI
         }
         // Start is called before the first frame update
 
-        public void close_menus() {
+        public void close_menus()
+        {
             for (int i = 0; i < menus.Length; i++)
             {
                 menus[i].onNotMenu();
                 menus[i].gameObject.SetActive(false);
-            }
-            player_controler[] player_Controlers = FindObjectsOfType<player_controler>();
-            foreach (player_controler player_ in player_Controlers)
-            {
-                player_.freezz_movement = false;
             }
         }
 
@@ -157,11 +153,13 @@ namespace game_pad_UI
 
         }
 
-        void pressed_F() { 
-        
+        void pressed_F()
+        {
+
         }
-    
-        void A_F() {
+
+        void A_F()
+        {
         }
 
         void B_F()
@@ -189,6 +187,7 @@ namespace game_pad_UI
             {
                 menus[0].gameObject.SetActive(true);
                 menus[0].onMenu();
+                change_menu(0);
                 for (int i = 0; i < menus.Length; i++)
                 {
                     if (i != 0)
@@ -206,6 +205,7 @@ namespace game_pad_UI
         {
             if (up_B)
             {
+                Debug.Log("melons");
                 if (posiion.y != max.y)
                 {
                     posiion.y += 1;

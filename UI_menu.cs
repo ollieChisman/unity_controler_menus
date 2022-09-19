@@ -9,7 +9,6 @@ namespace game_pad_UI {
 
     public class UI_menu : MonoBehaviour
     {
-        Playerinput inputs;
         UI_element[] elements;
         public Vector2Int min;
         public Vector2Int max;
