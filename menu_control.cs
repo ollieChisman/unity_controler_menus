@@ -41,7 +41,7 @@ namespace game_pad_UI
 
         public void B(CallbackContext context)
         {
-            if (B_B == false)
+            if (B_B == true)
             {
                 B_E();
             }
@@ -50,17 +50,19 @@ namespace game_pad_UI
 
         public void A(CallbackContext context)
         {
-            if (A_B == false)
+
+            A_B = context.action.triggered;
+            if (A_B == true)
             {
+                Debug.Log("the A button has been pressed ");
                 A_E();
                 pressed();
             }
-            A_B = context.action.triggered;
         }
 
         public void X(CallbackContext context)
         {
-            if (X_B == false)
+            if (X_B == true)
             {
                 X_E();
             }
@@ -69,7 +71,7 @@ namespace game_pad_UI
 
         public void Y(CallbackContext context)
         {
-            if (Y_B == false)
+            if (Y_B == true)
             {
                 Y_E();
             }
@@ -205,7 +207,6 @@ namespace game_pad_UI
         {
             if (up_B)
             {
-                Debug.Log("melons");
                 if (posiion.y != max.y)
                 {
                     posiion.y += 1;

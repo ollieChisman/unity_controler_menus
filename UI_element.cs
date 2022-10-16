@@ -16,7 +16,7 @@ namespace game_pad_UI
         public UnityEvent pressed;
         public Vector2Int pos = new Vector2Int(0,0);
 
-        private Color baseColour;
+        public Color baseColour;
         public bool isHylighted;
         public TextMeshProUGUI text;
         public menu_control menu_Control;
@@ -42,13 +42,12 @@ namespace game_pad_UI
         void onHylighted()
         {
             
-            if (isHylighted == true) {
-                isHylighted = false;
-                text.color = baseColour;
-                menu_control.pressed -= onPressed;
-            }
+            isHylighted = false;
+            if (text != null)text.color = baseColour;
+            menu_control.pressed -= onPressed;
             if (menu_Control != null && menu_Control.posiion == pos)
             {
+                    Debug.Log(name);
                     text.color = colour;
                     isHylighted = true;
                     menu_control.pressed += onPressed;
@@ -57,23 +56,24 @@ namespace game_pad_UI
 
         void onPressed()
         {
-            Debug.Log("pressed");
+            Debug.Log(transform.name);
             pressed.Invoke();
         }
 
         public void onMenu()
         {
-            text = GetComponent<TextMeshProUGUI>();
-            if (text != null)
-            {
-                baseColour = text.color;
-            }
             menu_control.hylighted += onHylighted;
         }
 
         public void onNotMenu()
         {
-           menu_control.hylighted -= onHylighted;
+            if (text != null)
+            {
+                isHylighted = false;
+                text.color = baseColour;
+                menu_control.pressed -= onPressed;
+                menu_control.hylighted -= onHylighted;
+            }
         }
 
 
