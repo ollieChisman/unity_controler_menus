@@ -16,8 +16,6 @@ namespace game_pad_UI
         public static event Action pressed;
         public static event Action hylighted;
 
-        private data data;
-
         bool A_B;
 
         bool up_B;
@@ -124,7 +122,6 @@ namespace game_pad_UI
                     }
                 }
             }
-            data = FindObjectOfType<data>();
         }
 
         // Update is called once per frame
