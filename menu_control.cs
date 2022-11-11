@@ -16,37 +16,16 @@ namespace game_pad_UI
         public static event Action pressed;
         public static event Action hylighted;
 
-        public static event Action A_E;
-        public static event Action B_E;
-        public static event Action X_E;
-        public static event Action Y_E;
-
-        public static event Action start_E;
-        public static event Action select_E;
-
         private data data;
 
-        bool B_B;
         bool A_B;
-        bool X_B;
-        bool Y_B;
 
         bool up_B;
         bool down_B;
         bool left_B;
         bool right_B;
 
-        bool start_B;
-        bool select_B;
 
-        public void B(CallbackContext context)
-        {
-            if (B_B == true)
-            {
-                B_E();
-            }
-            B_B = context.action.triggered;
-        }
 
         public void A(CallbackContext context)
         {
@@ -55,27 +34,8 @@ namespace game_pad_UI
             if (A_B == true)
             {
                 Debug.Log("the A button has been pressed ");
-                A_E();
                 pressed();
             }
-        }
-
-        public void X(CallbackContext context)
-        {
-            if (X_B == true)
-            {
-                X_E();
-            }
-            X_B = context.action.triggered;
-        }
-
-        public void Y(CallbackContext context)
-        {
-            if (Y_B == true)
-            {
-                Y_E();
-            }
-            Y_B = context.action.triggered;
         }
 
 
@@ -101,26 +61,6 @@ namespace game_pad_UI
         }
 
 
-
-        public void start(CallbackContext context)
-        {
-            if (start_B == false)
-            {
-                start_E();
-            }
-            start_B = context.action.triggered;
-            if (start_B == false) start_E();
-        }
-
-        public void select(CallbackContext context)
-        {
-            if (select_B == false)
-            {
-                select_E();
-            }
-            select_B = context.action.triggered;
-            if (select_B == false) select_E();
-        }
         // Start is called before the first frame update
 
         public void close_menus()
@@ -139,6 +79,8 @@ namespace game_pad_UI
         {
             Debug.Log(menu_ID);
             menus[menu_ID].gameObject.SetActive(true);
+            hylighted = null;
+            pressed = null;
             menus[menu_ID].onMenu();
             posiion = new Vector2Int(0, 0);
             max = menus[menu_ID].max;
@@ -147,8 +89,8 @@ namespace game_pad_UI
             {
                 if (i != menu_ID)
                 {
-                    menus[i].onNotMenu();
                     menus[i].gameObject.SetActive(false);
+                    menus[i].onNotMenu();
                 }
             }
             hylighted?.Invoke();
@@ -164,26 +106,9 @@ namespace game_pad_UI
         {
         }
 
-        void B_F()
-        {
-        }
-
-        void X_F()
-        {
-        }
-
-        void Y_F()
-        {
-        }
-
         void Start()
         {
             pressed += pressed_F;
-
-            A_E += A_F;
-            B_E += B_F;
-            X_E += X_F;
-            Y_E += Y_F;
 
             if (start_menu)
             {
@@ -240,22 +165,6 @@ namespace game_pad_UI
                     left_B = false;
                     hylighted?.Invoke();
                 }
-            }
-            if (A_B)
-            {
-                A_E();
-            }
-            if (Y_B)
-            {
-                Y_E();
-            }
-            if (B_B)
-            {
-                B_E();
-            }
-            if (X_B)
-            {
-                X_E();
             }
         }
     }

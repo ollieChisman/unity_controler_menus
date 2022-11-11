@@ -47,7 +47,7 @@ namespace game_pad_UI
             menu_control.pressed -= onPressed;
             if (menu_Control != null && menu_Control.posiion == pos)
             {
-                    Debug.Log(name);
+                    //Debug.Log(name);
                     text.color = colour;
                     isHylighted = true;
                     menu_control.pressed += onPressed;
@@ -69,10 +69,11 @@ namespace game_pad_UI
         {
             if (text != null)
             {
+                Debug.Log("test: "+name);
                 isHylighted = false;
                 text.color = baseColour;
-                menu_control.pressed -= onPressed;
-                menu_control.hylighted -= onHylighted;
+                //menu_control.pressed -= onPressed;
+                //menu_control.hylighted -= onHylighted;
             }
         }
 

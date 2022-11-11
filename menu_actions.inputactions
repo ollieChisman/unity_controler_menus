@@ -49,51 +49,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "B",
-                    "type": "Button",
-                    "id": "04ad0f74-e2b8-4988-a1e1-d40e96c6be08",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "X",
-                    "type": "Button",
-                    "id": "f33f3803-7763-46a1-a5b6-e238db12ddf9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Y",
-                    "type": "Button",
-                    "id": "279c6e99-76ad-4a4d-9ab4-f05cca73069f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "start",
-                    "type": "Button",
-                    "id": "9259a8b7-107d-42d0-999e-d5647889e1ab",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "select",
-                    "type": "Button",
-                    "id": "74cbc09c-0fef-4f02-9f0f-172943fd0d58",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -187,67 +142,12 @@
                 },
                 {
                     "name": "",
-                    "id": "1169c430-3d36-4af5-bc41-197441cb3741",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "X",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ce0dfbc0-c407-4d36-bd63-d2e91b68d6c6",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Y",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2458863b-8cfc-41a7-93e5-59106e6d95eb",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "A",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "31877fbe-285b-4827-9163-54eb0029d497",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "B",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e524bc7a-307c-41cd-865f-9a85f694dacf",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "start",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e5d91329-4160-45a7-905f-e97d01928f82",
-                    "path": "<Gamepad>/select",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
